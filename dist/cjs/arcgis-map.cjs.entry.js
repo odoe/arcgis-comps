@@ -2,8 +2,8 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-b630e408.js');
-const request = require('./MapView-1195e7f1.js');
+const index = require('./index-57f2cfbb.js');
+const request = require('./MapView-922b9f1e.js');
 
 const arcgisMapCss = "@import url('https://js.arcgis.com/next/esri/themes/light/main.css');.map-view{padding:0;margin:0}";
 

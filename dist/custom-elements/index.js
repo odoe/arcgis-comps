@@ -1,4 +1,4 @@
-import { setAssetPath, h as h$1F, proxyCustomElement } from '@stencil/core/internal/client';
+import { setAssetPath, h as h$1F, createEvent, proxyCustomElement } from '@stencil/core/internal/client';
 export { setAssetPath, setPlatformOptions } from '@stencil/core/internal/client';
 
 /*
@@ -6518,6 +6518,14 @@ let ArcGISSearch = class extends HTMLElement {
   constructor() {
     super();
     this.__registerHost();
+    this.searchBlur = createEvent(this, "searchBlur", 7);
+    this.searchClear = createEvent(this, "searchClear", 7);
+    this.searchComplete = createEvent(this, "searchComplete", 7);
+    this.searchFocus = createEvent(this, "searchFocus", 7);
+    this.searchStart = createEvent(this, "searchStart", 7);
+    this.selectResult = createEvent(this, "selectResult", 7);
+    this.suggestComplete = createEvent(this, "suggestComplete", 7);
+    this.suggestStart = createEvent(this, "suggestStart", 7);
   }
   validateView(newValue) {
     if (newValue) {
@@ -6531,6 +6539,15 @@ let ArcGISSearch = class extends HTMLElement {
     const search = new y$2({
       container: this.el
     });
+    // proxy events
+    search.on('search-blur', (e) => this.searchBlur.emit(e));
+    search.on('search-clear', (e) => this.searchClear.emit(e));
+    search.on('search-complete', (e) => this.searchComplete.emit(e));
+    search.on('search-focus', (e) => this.searchFocus.emit(e));
+    search.on('search-start', (e) => this.searchStart.emit(e));
+    search.on('select-result', (e) => this.selectResult.emit(e));
+    search.on('suggest-complete', (e) => this.suggestComplete.emit(e));
+    search.on('suggest-start', (e) => this.suggestStart.emit(e));
     this.widget = search;
   }
   render() {

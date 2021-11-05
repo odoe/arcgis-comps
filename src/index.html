@@ -22,4 +22,10 @@
       <arcgis-legend position="bottom-left"></arcgis-legend>
     </arcgis-webmap>
   </body>
+  <script>
+    const search = document.querySelector('arcgis-search');
+    search.addEventListener('searchComplete', (e) => {
+      console.log('searchComplete', e);
+    })
+  </script>
 </html>

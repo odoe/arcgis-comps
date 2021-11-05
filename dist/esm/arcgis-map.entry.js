@@ -1,5 +1,5 @@
-import { r as registerInstance, h, g as getElement } from './index-3067d8ff.js';
-import { an as t, b8 as j, b9 as G } from './MapView-a31458ed.js';
+import { r as registerInstance, h, g as getElement } from './index-41925fe8.js';
+import { an as t, b8 as j, b9 as G } from './MapView-2c43b6d4.js';
 
 const arcgisMapCss = "@import url('https://js.arcgis.com/next/esri/themes/light/main.css');.map-view{padding:0;margin:0}";
 

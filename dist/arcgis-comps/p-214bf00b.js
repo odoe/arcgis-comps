@@ -1,0 +1,1 @@
+import{bo as n,a9 as t}from"./p-c8bc3433.js";function o(o,r){const c=r||o.extent,u=o.width,s=t(c&&c.spatialReference);return c&&u?c.width/u*s*n*96:0}function r(o,r){const c=o.extent,u=o.width,s=function(o,r){return o/(t(r)*n*96)}(r,c.spatialReference);return c.clone().expand(s*u/c.width)}export{r as c,o as r}

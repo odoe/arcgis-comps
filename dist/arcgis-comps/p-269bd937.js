@@ -1,1 +1,0 @@
-import"./p-7b6f6c18.js";function t(t,n,o,r){const c=t.clone(),p=1<<c.level,e=c.col+n,f=c.row+o;return r&&e<0?(c.col=e+p,c.world-=1):e>=p?(c.col=e-p,c.world+=1):c.col=e,c.row=f,c}export{t as l}

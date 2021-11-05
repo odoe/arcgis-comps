@@ -89,6 +89,14 @@ declare namespace LocalJSX {
         "zoom"?: number;
     }
     interface ArcgisSearch {
+        "onSearchBlur"?: (event: CustomEvent<__esri.SearchSearchBlurEvent>) => void;
+        "onSearchClear"?: (event: CustomEvent<__esri.SearchSearchClearEvent>) => void;
+        "onSearchComplete"?: (event: CustomEvent<__esri.SearchSearchCompleteEvent>) => void;
+        "onSearchFocus"?: (event: CustomEvent<__esri.SearchSearchFocusEvent>) => void;
+        "onSearchStart"?: (event: CustomEvent<__esri.SearchSearchStartEvent>) => void;
+        "onSelectResult"?: (event: CustomEvent<__esri.SearchSelectResultEvent>) => void;
+        "onSuggestComplete"?: (event: CustomEvent<__esri.SearchSuggestCompleteEvent>) => void;
+        "onSuggestStart"?: (event: CustomEvent<__esri.SearchSuggestStartEvent>) => void;
         "position"?: string;
         "view"?: __esri.MapView | __esri.SceneView;
         "widget"?: any;

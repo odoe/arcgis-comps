@@ -1,1 +1,0 @@
-import{a as e,G as r}from"./p-e53f77c2.js";import{I as s}from"./p-804725e3.js";class t extends e{get requiresDedicatedFBO(){return this.children.some((e=>"additive"===e.blendFunction))}prepareRenderPasses(e){const t=e.registerRenderPass({name:"bitmap",brushes:[r.bitmap],target:()=>this.children,drawPhase:s.MAP});return[...super.prepareRenderPasses(e),t]}}export{t}
