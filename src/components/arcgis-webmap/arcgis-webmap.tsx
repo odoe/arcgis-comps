@@ -1,0 +1,98 @@
+import { Component, Element, Prop, h, Watch } from '@stencil/core';
+
+// arcgis imports
+import config from '@arcgis/core/config';
+import WebMap from '@arcgis/core/WebMap';
+import MapView from '@arcgis/core/views/MapView';
+
+@Component({
+  tag: 'arcgis-webmap',
+  styleUrl: 'arcgis-webmap.css',
+  shadow: false,
+})
+export class ArcGISWebMap {
+@Element() el: HTMLDivElement;
+
+  @Prop() apiKey: string;
+
+  @Prop() itemId: string;
+
+  @Prop() zoom: number;
+
+  @Prop() center: number[] | string;
+
+  public view: __esri.MapView;
+
+  @Watch('apiKey')
+  validateApiKey(value) {
+    config.apiKey = value;
+  }
+
+  @Watch('itemId')
+  validateItemId(value, old) {
+    if (value && value !== old) {
+        this.loadMap();
+    }
+  }
+
+  componentWillLoad() {
+      if (this.apiKey) {
+        config.apiKey = this.apiKey;
+      }
+
+      if (this.itemId) {
+          this.loadMap();
+      }
+  }
+
+  componentDidRender() {
+    const elem = this.el.querySelector('.esri-view-user-storage');
+    if (elem) {
+      const elems = Array.from(elem.children) as HTMLElement[];
+      for (let e of elems) {
+        if (e.tagName.toLowerCase().includes('arcgis-')) {
+          (e as any).view = this.view;
+        }
+      }
+    }
+  }
+
+  loadMap() {
+    const map = new WebMap({
+        portalItem: {
+            id: this.itemId
+        }
+    });
+
+    const params: any = {};
+
+    if (this.zoom) {
+        params.zoom = this.zoom;
+    }
+    if (this.center) {
+        if (typeof this.center === 'string') {
+          params.center = this.center.split(',').map((x) => Number(x));
+        }
+        else {
+          params.center = this.center;
+        }
+    }
+
+    const view = new MapView({
+        container: this.el,
+        map,
+        ...params
+    });
+
+    this.view = view;
+
+    view.when(() => console.log('view ready'));
+  }
+
+  render() {
+    return (
+        <div class="map-view">
+        </div>
+      );
+  }
+}

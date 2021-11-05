@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/arcgis-comps.esm.js"></script>
+    <script nomodule src="/build/arcgis-comps.js"></script>
+    <style>
+      arcgis-webmap {
+        width: 800px;
+        height: 800px;
+      }
+    </style>
+  </head>
+  <body>
+    <arcgis-webmap item-id="974c6641665a42bf8a57da08e607bb6f">
+      <arcgis-expand position="top-right">
+        <arcgis-search></arcgis-search>
+      </arcgis-expand>
+      <arcgis-legend position="bottom-left"></arcgis-legend>
+    </arcgis-webmap>
+  </body>
+</html>
