@@ -1,1 +1,0 @@
-function n(n,o){if(!t(n,o)){const t=n.typeKeywords;t?t.push(o):n.typeKeywords=[o]}}function t(n,t){return!!n.typeKeywords&&n.typeKeywords.indexOf(t)>-1}function o(n,t){const o=n.typeKeywords;if(o){const n=o.indexOf(t);n>-1&&o.splice(n,1)}}export{n as e,o as n,t}

@@ -5,7 +5,7 @@ export declare class ArcGISMap {
   zoom: number;
   center: number[] | string;
   view: __esri.MapView;
-  validateApiKey(value: any): void;
+  validateApiKey(value: string): void;
   componentWillLoad(): void;
   componentDidRender(): void;
   render(): any;

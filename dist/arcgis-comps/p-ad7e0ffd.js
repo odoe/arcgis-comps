@@ -1,1 +1,0 @@
-import{k as p}from"./p-7f18dc33.js";import"./p-27823887.js";import"./p-50ff864e.js";function r(r){return(0,p[r.operation])(...r.parameters)}export{r as executeGEOperation}

@@ -11,7 +11,7 @@ import Legend from '@arcgis/core/widgets/Legend';
 export class ArcGISLegend {
   @Element() el: HTMLDivElement;
 
-  @Prop() position: string;
+  @Prop() position: string = 'bottom-left';
 
   @Prop() view : __esri.MapView | __esri.SceneView;
 
