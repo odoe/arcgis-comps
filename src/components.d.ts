@@ -11,6 +11,7 @@ export namespace Components {
         "view": __esri.MapView | __esri.SceneView;
     }
     interface ArcgisFeatureTable {
+        "itemId": string;
         "layer": any;
         "position": string;
         "view": __esri.MapView | __esri.SceneView;
@@ -91,7 +92,9 @@ declare namespace LocalJSX {
         "view"?: __esri.MapView | __esri.SceneView;
     }
     interface ArcgisFeatureTable {
+        "itemId"?: string;
         "layer"?: any;
+        "onRowSelectionChange"?: (event: CustomEvent<__esri.FeatureTableSelectionChangeEvent>) => void;
         "position"?: string;
         "view"?: __esri.MapView | __esri.SceneView;
         "widget"?: any;

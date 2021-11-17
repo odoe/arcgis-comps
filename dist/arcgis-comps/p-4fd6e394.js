@@ -1,0 +1,1 @@
+import{bK as n,aB as t}from"./p-9ae46e68.js";function r(n,t,r={}){return u(n,t,r,c)}function o(n,t,r={}){return u(n,t,r,e)}function u(r,o,u={},c){let e=null;const f=u.once?(n,r)=>{c(n)&&(t(e),o(n,r))}:(n,t)=>{c(n)&&o(n,t)};if(e=n(r,f,u.sync,u.equals),u.initial){const n=r();f(n,n)}return e}function c(){return!0}function e(n){return!!n}const f={sync:!0};export{r as i,f as m,o as u}

@@ -11,7 +11,7 @@ import MapView from '@arcgis/core/views/MapView';
   shadow: false,
 })
 export class ArcGISWebMap {
-@Element() el: HTMLDivElement;
+  @Element() el: HTMLDivElement;
 
   @Prop() apiKey: string;
 
