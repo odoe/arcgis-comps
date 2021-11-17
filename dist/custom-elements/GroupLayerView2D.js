@@ -1,4 +1,4 @@
-import { W as e, X as d, gr as t, Y as i$1, ch as S, g3 as n } from './index.js';
+import { e, d, gR as t, i as i$1, S, gu as n } from './index.js';
 import { l } from './VertexArrayObject.js';
 import './Texture.js';
 import { a as a$1 } from './WGLContainer.js';

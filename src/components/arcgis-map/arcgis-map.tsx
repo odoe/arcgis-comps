@@ -26,7 +26,7 @@ export class ArcGISMap {
   public view: __esri.MapView;
 
   @Watch('apiKey')
-  validateApiKey(value) {
+  validateApiKey(value: string) {
     config.apiKey = value;
   }
 

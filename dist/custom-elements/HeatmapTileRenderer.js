@@ -1,4 +1,4 @@
-import { W as e, Y as i$1 } from './index.js';
+import { e, i as i$1 } from './index.js';
 import { a as a$1, n as n$1 } from './heatmapUtils.js';
 import { n } from './BitmapTileContainer.js';
 import { o as o$1 } from './BaseTileRenderer.js';

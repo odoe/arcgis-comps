@@ -1,4 +1,4 @@
-import { W as e, X as d, Y as i, e as s } from './index.js';
+import { e, d, i, s } from './index.js';
 import X from './FeatureLayerView2D.js';
 
 /*

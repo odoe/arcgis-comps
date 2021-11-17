@@ -1,4 +1,4 @@
-import { r, go as O, gb as y } from './index.js';
+import { r, gO as O, gC as y } from './index.js';
 
 /*
 All material copyright ESRI, All Rights Reserved, unless otherwise specified.

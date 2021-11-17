@@ -1,4 +1,4 @@
-import { b as t } from './index.js';
+import { t } from './index.js';
 
 /*
 All material copyright ESRI, All Rights Reserved, unless otherwise specified.

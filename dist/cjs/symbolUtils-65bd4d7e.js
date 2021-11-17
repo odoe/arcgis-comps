@@ -1,0 +1,23 @@
+'use strict';
+
+const unitUtils = require('./unitUtils-61d611e2.js');
+const request = require('./messageBundle-312ceb47.js');
+const utils = require('./utils-08a64a75.js');
+
+/*
+All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+*/
+const r={heading:"esri-widget__heading"};function s(s,i){const c=`h${unitUtils.e$1(Math.ceil(s.level),1,6)}`;return delete s.level,request.n(c,{...s,class:request.l$4(r.heading,s.class)},i)}
+
+/*
+All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+*/
+let c=null;function u(e,t){return Math.floor(Math.random()*(t-e+1)+e)}function y(e,t,l){const{backgroundColor:r,outline:i,dotSize:a}=e,n=l&&l.swatchSize||22,o=.8,s=Math.round(n*n/a**2*o),y=window.devicePixelRatio,p=document.createElement("canvas"),h=n*y;p.width=h,p.height=h,p.style.width=p.width/y+"px",p.style.height=p.height/y+"px";const b=p.getContext("2d");if(r&&(b.fillStyle=r.toCss(!0),b.fillRect(0,0,h,h),b.fill()),b.fillStyle=t.toCss(!0),c&&c.length/2===s)for(let u=0;u<2*s;u+=2){const e=c[u],t=c[u+1];b.fillRect(e,t,a*y,a*y),b.fill();}else {c=[];for(let e=0;e<2*s;e+=2){const e=u(0,h),t=u(0,h);c.push(e,t),b.fillRect(e,t,a*y,a*y),b.fill();}}i&&(i.color&&(b.strokeStyle=i.color.toCss(!0)),b.lineWidth=i.width,b.strokeRect(0,0,h,h));const f=new Image(n,n);return f.src=p.toDataURL(),f.style.filter=l.effect,f}function p(e,t={}){const l=24,r=75,i="horizontal"===t.align,a=i?r:l,n=i?l:r,{width:o=a,height:s=n,gradient:c=!0}=t,u=window.devicePixelRatio,y=o*u,p=s*u,h=document.createElement("canvas");h.width=y,h.height=p,h.style.width=`${o}px`,h.style.height=`${s}px`;const b=h.getContext("2d"),f=i?y:0,d=i?0:p;if(c){const t=b.createLinearGradient(0,0,f,d),l=e.length,r=1===l?0:1/(l-1);e.forEach(((e,l)=>t.addColorStop(l*r,e.toString()))),b.fillStyle=t,b.fillRect(0,0,y,p);}else {const t=i?y/e.length:y,l=i?p:p/e.length;let r=0,a=0;for(const n of e)b.fillStyle=n.toString(),b.fillRect(r,a,t,l),r=i?r+t:0,a=i?0:a+l;}const m=document.createElement("div");return m.style.width=`${o}px`,m.style.height=`${s}px`,m.style.filter=null==t?void 0:t.effect,m.appendChild(h),m}async function h(e,t){switch(e.type){case"web-style":{const{previewWebStyleSymbol:l}=await Promise.resolve().then(function () { return require('./previewWebStyleSymbol-9da437ad.js'); });return l(e,h,t)}case"label-3d":case"line-3d":case"mesh-3d":case"point-3d":case"polygon-3d":{const{previewSymbol3D:l}=await Promise.resolve().then(function () { return require('./previewSymbol3D-252d05a7.js'); });return l(e,t)}case"simple-marker":case"simple-line":case"simple-fill":case"picture-marker":case"picture-fill":case"text":{const{previewSymbol2D:l}=await Promise.resolve().then(function () { return require('./previewSymbol2D-5f982198.js'); });return l(e,t)}case"cim":{const{previewCIMSymbol:l}=await Promise.resolve().then(function () { return require('./previewCIMSymbol-b5da5609.js'); });return l(e,t)}default:return}}function b(e){return e&&"opacity"in e?e.opacity*b(e.parent):1}async function f(o,s){var c,u;if(!o)return;const y=o.sourceLayer,p=null!=(c=request.r(s)&&null!=(u=s.useSourceLayer)&&u?y:o.layer)?c:y,h=b(p);if(request.r(o.symbol)&&(!request.r(s)||!0!==s.ignoreGraphicSymbol)){const t="web-style"===o.symbol.type?await o.symbol.fetchSymbol(request.r(s)?s.abortOptions:null):o.symbol.clone();return utils.v(t,null,h),t}const f=request.r(s)&&s.renderer||p&&"renderer"in p&&p.renderer;let d=f&&"getSymbolAsync"in f?await f.getSymbolAsync(o,s):null;if(!d)return;if(d="web-style"===d.type?await d.fetchSymbol(request.r(s)?s.abortOptions:null):d.clone(),!("visualVariables"in f)||!f.visualVariables||!f.visualVariables.length)return utils.v(d,null,h),d;if("arcadeRequiredForVisualVariables"in f&&f.arcadeRequiredForVisualVariables&&(request.t(s)||request.t(s.arcade))){const e={...request.e$3(s)};e.arcade=await unitUtils.a$1(),s=e;}const m=await Promise.resolve().then(function () { return require('./visualVariableUtils-4df768a8.js'); }),g=[],w=[],S=[],v=[];for(const e of f.visualVariables)switch(e.type){case"color":g.push(e);break;case"opacity":w.push(e);break;case"rotation":v.push(e);break;case"size":e.target||S.push(e);}const V=!!g.length&&g[g.length-1],x=V?m.getColor(V,o,s):null,R=!!w.length&&w[w.length-1];let C=R?m.getOpacity(R,o,s):null;if(null!=h&&(C=null!=C?C*h:h),utils.v(d,x,C),S.length){const e=m.getAllSizes(S,o,s);await utils.M(d,e);}for(const e of v)utils.q(d,m.getRotationAngle(e,o,s),e.axis);return d}
+
+exports.f = f;
+exports.h = h;
+exports.p = p;
+exports.s = s;
+exports.y = y;

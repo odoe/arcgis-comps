@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type                   | Default     |
-| ---------- | ---------- | ----------- | ---------------------- | ----------- |
-| `position` | `position` |             | `string`               | `undefined` |
-| `view`     | --         |             | `MapView \| SceneView` | `undefined` |
-| `widget`   | `widget`   |             | `any`                  | `undefined` |
+| Property   | Attribute  | Description | Type                   | Default         |
+| ---------- | ---------- | ----------- | ---------------------- | --------------- |
+| `position` | `position` |             | `string`               | `'bottom-left'` |
+| `view`     | --         |             | `MapView \| SceneView` | `undefined`     |
+| `widget`   | `widget`   |             | `any`                  | `undefined`     |
 
 
 ----------------------------------------------

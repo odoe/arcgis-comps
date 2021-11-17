@@ -10,6 +10,14 @@ export namespace Components {
         "position": string;
         "view": __esri.MapView | __esri.SceneView;
     }
+    interface ArcgisFeatureTable {
+        "itemId": string;
+        "layer": any;
+        "position": string;
+        "url": string;
+        "view": __esri.MapView | __esri.SceneView;
+        "widget": any;
+    }
     interface ArcgisLegend {
         "position": string;
         "view": __esri.MapView | __esri.SceneView;
@@ -40,6 +48,12 @@ declare global {
         prototype: HTMLArcgisExpandElement;
         new (): HTMLArcgisExpandElement;
     };
+    interface HTMLArcgisFeatureTableElement extends Components.ArcgisFeatureTable, HTMLStencilElement {
+    }
+    var HTMLArcgisFeatureTableElement: {
+        prototype: HTMLArcgisFeatureTableElement;
+        new (): HTMLArcgisFeatureTableElement;
+    };
     interface HTMLArcgisLegendElement extends Components.ArcgisLegend, HTMLStencilElement {
     }
     var HTMLArcgisLegendElement: {
@@ -66,6 +80,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "arcgis-expand": HTMLArcgisExpandElement;
+        "arcgis-feature-table": HTMLArcgisFeatureTableElement;
         "arcgis-legend": HTMLArcgisLegendElement;
         "arcgis-map": HTMLArcgisMapElement;
         "arcgis-search": HTMLArcgisSearchElement;
@@ -76,6 +91,15 @@ declare namespace LocalJSX {
     interface ArcgisExpand {
         "position"?: string;
         "view"?: __esri.MapView | __esri.SceneView;
+    }
+    interface ArcgisFeatureTable {
+        "itemId"?: string;
+        "layer"?: any;
+        "onRowSelectionChange"?: (event: CustomEvent<__esri.FeatureTableSelectionChangeEvent>) => void;
+        "position"?: string;
+        "url"?: string;
+        "view"?: __esri.MapView | __esri.SceneView;
+        "widget"?: any;
     }
     interface ArcgisLegend {
         "position"?: string;
@@ -109,6 +133,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "arcgis-expand": ArcgisExpand;
+        "arcgis-feature-table": ArcgisFeatureTable;
         "arcgis-legend": ArcgisLegend;
         "arcgis-map": ArcgisMap;
         "arcgis-search": ArcgisSearch;
@@ -120,6 +145,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "arcgis-expand": LocalJSX.ArcgisExpand & JSXBase.HTMLAttributes<HTMLArcgisExpandElement>;
+            "arcgis-feature-table": LocalJSX.ArcgisFeatureTable & JSXBase.HTMLAttributes<HTMLArcgisFeatureTableElement>;
             "arcgis-legend": LocalJSX.ArcgisLegend & JSXBase.HTMLAttributes<HTMLArcgisLegendElement>;
             "arcgis-map": LocalJSX.ArcgisMap & JSXBase.HTMLAttributes<HTMLArcgisMapElement>;
             "arcgis-search": LocalJSX.ArcgisSearch & JSXBase.HTMLAttributes<HTMLArcgisSearchElement>;

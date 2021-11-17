@@ -2,6 +2,9 @@ import { Component, Element, Prop, Watch, h } from '@stencil/core';
 // arcgis imports
 import Legend from '@arcgis/core/widgets/Legend';
 export class ArcGISLegend {
+  constructor() {
+    this.position = 'bottom-left';
+  }
   validateView(value) {
     if (value) {
       this.widget.view = value;
@@ -45,7 +48,8 @@ export class ArcGISLegend {
         "text": ""
       },
       "attribute": "position",
-      "reflect": false
+      "reflect": false,
+      "defaultValue": "'bottom-left'"
     },
     "view": {
       "type": "unknown",

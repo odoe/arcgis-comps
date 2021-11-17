@@ -11,7 +11,7 @@ import MapView from '@arcgis/core/views/MapView';
   shadow: false,
 })
 export class ArcGISWebMap {
-@Element() el: HTMLDivElement;
+  @Element() el: HTMLDivElement;
 
   @Prop() apiKey: string;
 
@@ -24,12 +24,12 @@ export class ArcGISWebMap {
   public view: __esri.MapView;
 
   @Watch('apiKey')
-  validateApiKey(value) {
+  validateApiKey(value: string) {
     config.apiKey = value;
   }
 
   @Watch('itemId')
-  validateItemId(value, old) {
+  validateItemId(value: string, old: string) {
     if (value && value !== old) {
         this.loadMap();
     }

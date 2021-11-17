@@ -1,4 +1,4 @@
-import { cC as M, r, c2 as H } from './index.js';
+import { M, r, ci as H } from './index.js';
 
 /*
 All material copyright ESRI, All Rights Reserved, unless otherwise specified.

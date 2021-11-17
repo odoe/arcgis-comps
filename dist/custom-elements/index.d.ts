@@ -8,6 +8,12 @@ export const ArcgisExpand: {
   new (): ArcgisExpand;
 };
 
+interface ArcgisFeatureTable extends Components.ArcgisFeatureTable, HTMLElement {}
+export const ArcgisFeatureTable: {
+  prototype: ArcgisFeatureTable;
+  new (): ArcgisFeatureTable;
+};
+
 interface ArcgisLegend extends Components.ArcgisLegend, HTMLElement {}
 export const ArcgisLegend: {
   prototype: ArcgisLegend;

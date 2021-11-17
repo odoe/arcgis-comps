@@ -1,1 +1,0 @@
-import{r}from"./p-8447e72f.js";import"./p-c8bc3433.js";import"./p-84bf99cb.js";class t{_decode(t){const e=r(t.buffer,t.options);return Promise.resolve({result:e,transferList:[e.pixelData.buffer]})}}function e(){return new t}export default e;

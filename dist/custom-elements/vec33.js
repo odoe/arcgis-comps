@@ -1,4 +1,4 @@
-import { s } from './index.js';
+import { u as s } from './index.js';
 
 /*
 All material copyright ESRI, All Rights Reserved, unless otherwise specified.

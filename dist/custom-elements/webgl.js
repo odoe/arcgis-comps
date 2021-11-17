@@ -2,4 +2,4 @@ export { h as BufferObject, l as FramebufferObject, e as Program, a as Renderbuf
 export { t as ProgramCache } from './ProgramCache.js';
 export { e as ShaderCompiler, t as createProgram, n as glslifyDefineMap } from './ShaderCompiler.js';
 export { o as Texture } from './Texture.js';
-export { t as createContextOrErrorHTML } from './index.js';
+export { q as createContextOrErrorHTML } from './index.js';

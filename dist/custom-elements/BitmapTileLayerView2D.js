@@ -1,4 +1,4 @@
-import { W as e, Y as i } from './index.js';
+import { e, i } from './index.js';
 import { n } from './BitmapTileContainer.js';
 
 /*

@@ -5,8 +5,8 @@ export declare class ArcGISWebMap {
   zoom: number;
   center: number[] | string;
   view: __esri.MapView;
-  validateApiKey(value: any): void;
-  validateItemId(value: any, old: any): void;
+  validateApiKey(value: string): void;
+  validateItemId(value: string, old: string): void;
   componentWillLoad(): void;
   componentDidRender(): void;
   loadMap(): void;

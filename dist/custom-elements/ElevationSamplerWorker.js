@@ -1,4 +1,4 @@
-import { r, d as s$1 } from './index.js';
+import { r, a as s$1 } from './index.js';
 import { h } from './PooledRBush.js';
 import { _ } from './georeference.js';
 

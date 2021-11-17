@@ -8,24 +8,37 @@
     <script type="module" src="/build/arcgis-comps.esm.js"></script>
     <script nomodule src="/build/arcgis-comps.js"></script>
     <style>
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
       arcgis-webmap {
         width: 800px;
-        height: 800px;
+        height: 500px;
+      }
+      .container {
+        height: 400px;
+        width: 800px;
       }
     </style>
   </head>
   <body>
-    <arcgis-webmap item-id="974c6641665a42bf8a57da08e607bb6f">
-      <arcgis-expand position="top-right">
-        <arcgis-search></arcgis-search>
-      </arcgis-expand>
-      <arcgis-legend position="bottom-left"></arcgis-legend>
+    <arcgis-webmap item-id="3c245fe893234d4f85e4edaa41a9e0bf">
     </arcgis-webmap>
+    <div class="container">
+      <arcgis-feature-table item-id="d419f6ba344848889db7ad62c45817db"></arcgis-feature-table>
+    </div>
+    
   </body>
   <script>
-    const search = document.querySelector('arcgis-search');
-    search.addEventListener('searchComplete', (e) => {
-      console.log('searchComplete', e);
-    })
+    console.log("start");
+    const mapElem = document.querySelector('arcgis-webmap')
+    const tableElem = document.querySelector('arcgis-feature-table')
+
+    const view = mapElem.view;
+    tableElem.view = view;
   </script>
 </html>

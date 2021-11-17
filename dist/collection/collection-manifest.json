@@ -1,6 +1,7 @@
 {
   "entries": [
     "./components/arcgis-expand/arcgis-expand.js",
+    "./components/arcgis-feature-table/arcgis-feature-table.js",
     "./components/arcgis-legend/arcgis-legend.js",
     "./components/arcgis-map/arcgis-map.js",
     "./components/arcgis-search/arcgis-search.js",
