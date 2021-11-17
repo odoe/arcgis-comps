@@ -22,6 +22,12 @@ export class ArcGISFeatureTable {
       this.widget.layer = value;
     }
   }
+  validateUrl(value, old) {
+    if (value && value !== old) {
+      const layer = new FeatureLayer({ url: value });
+      this.layer = layer;
+    }
+  }
   validateView(value) {
     if (value) {
       this.widget.view = value;
@@ -49,6 +55,10 @@ export class ArcGISFeatureTable {
           id: this.itemId
         }
       });
+      this.layer = layer;
+    }
+    else if (this.url) {
+      const layer = new FeatureLayer({ url: this.url });
       this.layer = layer;
     }
   }
@@ -116,6 +126,23 @@ export class ArcGISFeatureTable {
       "reflect": false,
       "defaultValue": "'bottom-left'"
     },
+    "url": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "url",
+      "reflect": false
+    },
     "view": {
       "type": "unknown",
       "mutable": false,
@@ -180,6 +207,9 @@ export class ArcGISFeatureTable {
     }, {
       "propName": "layer",
       "methodName": "validateLayer"
+    }, {
+      "propName": "url",
+      "methodName": "validateUrl"
     }, {
       "propName": "view",
       "methodName": "validateView"

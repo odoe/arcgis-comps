@@ -14,6 +14,7 @@ export namespace Components {
         "itemId": string;
         "layer": any;
         "position": string;
+        "url": string;
         "view": __esri.MapView | __esri.SceneView;
         "widget": any;
     }
@@ -96,6 +97,7 @@ declare namespace LocalJSX {
         "layer"?: any;
         "onRowSelectionChange"?: (event: CustomEvent<__esri.FeatureTableSelectionChangeEvent>) => void;
         "position"?: string;
+        "url"?: string;
         "view"?: __esri.MapView | __esri.SceneView;
         "widget"?: any;
     }

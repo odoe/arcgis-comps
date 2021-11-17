@@ -12,6 +12,7 @@
 | `itemId`   | `item-id`  |             | `string`               | `undefined`     |
 | `layer`    | `layer`    |             | `any`                  | `null`          |
 | `position` | `position` |             | `string`               | `'bottom-left'` |
+| `url`      | `url`      |             | `string`               | `undefined`     |
 | `view`     | --         |             | `MapView \| SceneView` | `undefined`     |
 | `widget`   | `widget`   |             | `any`                  | `undefined`     |
 

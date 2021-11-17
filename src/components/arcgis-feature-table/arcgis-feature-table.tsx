@@ -18,6 +18,8 @@ export class ArcGISFeatureTable {
 
   @Prop() position: string = 'bottom-left';
 
+  @Prop() url: string;
+
   @Prop() view: __esri.MapView | __esri.SceneView;
 
   @Prop() widget: any;
@@ -38,6 +40,14 @@ export class ArcGISFeatureTable {
   validateLayer(value: any) {
     if (value) {
       this.widget.layer = value;
+    }
+  }
+
+  @Watch('url')
+  validateUrl(value: string, old: string) {
+    if (value && value !== old) {
+        const layer = new FeatureLayer({ url: value });
+        this.layer = layer;
     }
   }
 
@@ -76,6 +86,9 @@ export class ArcGISFeatureTable {
           id: this.itemId
         }
       })
+      this.layer = layer;
+    } else if (this.url) {
+      const layer = new FeatureLayer({ url: this.url });
       this.layer = layer;
     }
   }

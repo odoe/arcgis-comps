@@ -7573,6 +7573,12 @@ let ArcGISFeatureTable = class extends HTMLElement {
       this.widget.layer = value;
     }
   }
+  validateUrl(value, old) {
+    if (value && value !== old) {
+      const layer = new Ge({ url: value });
+      this.layer = layer;
+    }
+  }
   validateView(value) {
     if (value) {
       this.widget.view = value;
@@ -7602,6 +7608,10 @@ let ArcGISFeatureTable = class extends HTMLElement {
       });
       this.layer = layer;
     }
+    else if (this.url) {
+      const layer = new Ge({ url: this.url });
+      this.layer = layer;
+    }
   }
   render() {
     return h$1G("div", null);
@@ -7610,6 +7620,7 @@ let ArcGISFeatureTable = class extends HTMLElement {
   static get watchers() { return {
     "itemId": ["validateItemId"],
     "layer": ["validateLayer"],
+    "url": ["validateUrl"],
     "view": ["validateView"]
   }; }
   static get style() { return arcgisFeatureTableCss; }
@@ -9724,7 +9735,7 @@ let ArcGISWebMap = class extends HTMLElement {
 };
 
 const ArcgisExpand = /*@__PURE__*/proxyCustomElement(ArcGISSearch$1, [0,"arcgis-expand",{"position":[1],"view":[16]}]);
-const ArcgisFeatureTable = /*@__PURE__*/proxyCustomElement(ArcGISFeatureTable, [0,"arcgis-feature-table",{"itemId":[1,"item-id"],"layer":[8],"position":[1],"view":[16],"widget":[8]}]);
+const ArcgisFeatureTable = /*@__PURE__*/proxyCustomElement(ArcGISFeatureTable, [0,"arcgis-feature-table",{"itemId":[1,"item-id"],"layer":[8],"position":[1],"url":[1],"view":[16],"widget":[8]}]);
 const ArcgisLegend = /*@__PURE__*/proxyCustomElement(ArcGISLegend, [0,"arcgis-legend",{"position":[1],"view":[16],"widget":[8]}]);
 const ArcgisMap = /*@__PURE__*/proxyCustomElement(ArcGISMap, [0,"arcgis-map",{"apiKey":[1,"api-key"],"basemap":[1],"zoom":[2],"center":[1]}]);
 const ArcgisSearch = /*@__PURE__*/proxyCustomElement(ArcGISSearch, [0,"arcgis-search",{"position":[1],"view":[16],"widget":[8]}]);

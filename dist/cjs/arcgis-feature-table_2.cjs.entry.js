@@ -2950,6 +2950,12 @@ let ArcGISFeatureTable = class {
       this.widget.layer = value;
     }
   }
+  validateUrl(value, old) {
+    if (value && value !== old) {
+      const layer = new FeatureLayer['default']({ url: value });
+      this.layer = layer;
+    }
+  }
   validateView(value) {
     if (value) {
       this.widget.view = value;
@@ -2979,6 +2985,10 @@ let ArcGISFeatureTable = class {
       });
       this.layer = layer;
     }
+    else if (this.url) {
+      const layer = new FeatureLayer['default']({ url: this.url });
+      this.layer = layer;
+    }
   }
   render() {
     return index.h("div", null);
@@ -2987,6 +2997,7 @@ let ArcGISFeatureTable = class {
   static get watchers() { return {
     "itemId": ["validateItemId"],
     "layer": ["validateLayer"],
+    "url": ["validateUrl"],
     "view": ["validateView"]
   }; }
 };
