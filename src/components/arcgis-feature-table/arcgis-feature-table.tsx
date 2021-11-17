@@ -14,7 +14,7 @@ export class ArcGISFeatureTable {
 
   @Prop() itemId: string;
 
-  @Prop() layer: any = null;
+  @Prop({ mutable: true }) layer: any = null;
 
   @Prop() position: string = 'bottom-left';
 
@@ -22,7 +22,7 @@ export class ArcGISFeatureTable {
 
   @Prop() view: __esri.MapView | __esri.SceneView;
 
-  @Prop() widget: any;
+  @Prop({ mutable: true }) widget: any;
 
   @Watch('itemId')
   validateItemId(value: string, old: string) {
@@ -61,6 +61,7 @@ export class ArcGISFeatureTable {
     }
   }
 
+  @Event() loaded: EventEmitter<boolean>;
   @Event() rowSelectionChange: EventEmitter<__esri.FeatureTableSelectionChangeEvent>;
 
   componentWillLoad() {
@@ -68,11 +69,10 @@ export class ArcGISFeatureTable {
       container: this.el
     });
 
+    this.widget = table;
 
     // proxy events
     table.on('selection-change', (e) => this.rowSelectionChange.emit(e));
-
-    this.widget = table;
 
     if (this.view) {
       table.view = this.view as any;
@@ -91,6 +91,8 @@ export class ArcGISFeatureTable {
       const layer = new FeatureLayer({ url: this.url });
       this.layer = layer;
     }
+
+    this.loaded.emit(true);
   }
 
   render() {

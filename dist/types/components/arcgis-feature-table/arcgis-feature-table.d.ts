@@ -11,6 +11,7 @@ export declare class ArcGISFeatureTable {
   validateLayer(value: any): void;
   validateUrl(value: string, old: string): void;
   validateView(value: __esri.MapView | __esri.SceneView): void;
+  loaded: EventEmitter<boolean>;
   rowSelectionChange: EventEmitter<__esri.FeatureTableSelectionChangeEvent>;
   componentWillLoad(): void;
   render(): any;

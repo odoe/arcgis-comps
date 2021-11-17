@@ -95,6 +95,7 @@ declare namespace LocalJSX {
     interface ArcgisFeatureTable {
         "itemId"?: string;
         "layer"?: any;
+        "onLoaded"?: (event: CustomEvent<boolean>) => void;
         "onRowSelectionChange"?: (event: CustomEvent<__esri.FeatureTableSelectionChangeEvent>) => void;
         "position"?: string;
         "url"?: string;
