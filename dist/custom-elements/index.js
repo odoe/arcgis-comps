@@ -7548,7 +7548,7 @@ const FeatureLayer = /*#__PURE__*/Object.freeze({
   'default': Ge
 });
 
-const arcgisFeatureTableCss = "";
+const arcgisFeatureTableCss = "@import url('https://js.arcgis.com/next/esri/themes/light/main.css');";
 
 let ArcGISFeatureTable = class extends HTMLElement {
   constructor() {
