@@ -1,0 +1,1 @@
+import"./p-9ae46e68.js";import"./p-566b0715.js";import"./p-f42060e0.js";import"./p-2b250922.js";function p(p,t,o,r){const e=p.clone(),i=1<<e.level,s=e.col+t,j=e.row+o;return r&&s<0?(e.col=s+i,e.world-=1):s>=i?(e.col=s-i,e.world+=1):e.col=s,e.row=j,e}export{p as l}

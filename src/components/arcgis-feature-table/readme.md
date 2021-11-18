@@ -21,6 +21,7 @@
 
 | Event                | Description | Type                                            |
 | -------------------- | ----------- | ----------------------------------------------- |
+| `loaded`             |             | `CustomEvent<boolean>`                          |
 | `rowSelectionChange` |             | `CustomEvent<FeatureTableSelectionChangeEvent>` |
 
 
