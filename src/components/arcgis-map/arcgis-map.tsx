@@ -1,4 +1,4 @@
-import { Component, Element, Prop, h, Watch } from '@stencil/core';
+import { Component, Element, Prop, h, Watch, Event, EventEmitter } from '@stencil/core';
 
 // arcgis imports
 import config from '@arcgis/core/config';
@@ -61,8 +61,10 @@ export class ArcGISMap {
 
       this.view = view;
 
-      view.when(() => console.log('view ready'));
+      view.when(() => this.loaded.emit(true));
   }
+
+  @Event() loaded: EventEmitter<boolean>;
 
   componentDidRender() {
     const elem = this.el.querySelector('.esri-view-user-storage');

@@ -15,5 +15,4 @@ export declare class ArcGISSearch {
   suggestComplete: EventEmitter<__esri.SearchSuggestCompleteEvent>;
   suggestStart: EventEmitter<__esri.SearchSuggestStartEvent>;
   componentWillLoad(): void;
-  render(): any;
 }

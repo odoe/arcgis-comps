@@ -1,4 +1,4 @@
-import { Component, Element, Prop, Watch, h } from '@stencil/core';
+import { Component, Element, Prop, Watch, Event, EventEmitter  } from '@stencil/core';
 
 // arcgis imports
 import Legend from '@arcgis/core/widgets/Legend';
@@ -27,6 +27,8 @@ export class ArcGISLegend {
     }
   }
 
+  @Event() loaded: EventEmitter<boolean>;
+
   componentWillLoad() {
       const legend = new Legend({
           container: this.el
@@ -37,12 +39,6 @@ export class ArcGISLegend {
       }
 
       this.widget = legend;
-  }
-
-  render() {
-    return (
-        <div class="legend-container">
-        </div>
-      );
+      this.loaded.emit(true);
   }
 }

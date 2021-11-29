@@ -1,0 +1,6 @@
+@import url('https://js.arcgis.com/next/esri/themes/light/main.css');
+
+arcgis-basemap-gallery {
+    min-width: 300px;
+    min-height: 240px;
+}

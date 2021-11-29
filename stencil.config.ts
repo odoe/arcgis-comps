@@ -18,4 +18,19 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
+  testing: {
+    transform: {
+      '^.+\\.jsx?$': 'babel-jest',
+    },
+    transformIgnorePatterns: ['node_modules/(?!(@arcgis|@esri)/)'],
+    moduleFileExtensions: [
+      'ts',
+      'tsx',
+      'js',
+      'mjs',
+      'jsx',
+      'json',
+      'd.ts'
+    ]
+  },
 };

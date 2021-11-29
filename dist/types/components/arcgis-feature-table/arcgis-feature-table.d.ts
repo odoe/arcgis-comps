@@ -7,6 +7,9 @@ export declare class ArcGISFeatureTable {
   url: string;
   view: __esri.MapView | __esri.SceneView;
   widget: any;
+  private _fieldConfigs;
+  fieldConfigs: any | string;
+  fieldConfigsWatcher(newValue: any | string): void;
   validateItemId(value: string, old: string): void;
   validateLayer(value: any): void;
   validateUrl(value: string, old: string): void;
@@ -14,5 +17,4 @@ export declare class ArcGISFeatureTable {
   loaded: EventEmitter<boolean>;
   rowSelectionChange: EventEmitter<__esri.FeatureTableSelectionChangeEvent>;
   componentWillLoad(): void;
-  render(): any;
 }

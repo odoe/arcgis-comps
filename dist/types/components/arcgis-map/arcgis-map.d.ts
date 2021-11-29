@@ -1,3 +1,4 @@
+import { EventEmitter } from '../../stencil-public-runtime';
 export declare class ArcGISMap {
   el: HTMLDivElement;
   apiKey: string;
@@ -7,6 +8,7 @@ export declare class ArcGISMap {
   view: __esri.MapView;
   validateApiKey(value: string): void;
   componentWillLoad(): void;
+  loaded: EventEmitter<boolean>;
   componentDidRender(): void;
   render(): any;
 }

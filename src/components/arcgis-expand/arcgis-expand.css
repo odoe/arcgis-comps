@@ -1,1 +1,9 @@
 @import url('https://js.arcgis.com/next/esri/themes/light/main.css');
+
+.esri-expand__content--expanded {
+    max-height: 240px!important;
+    min-height: 32px!important;
+    min-width: 240px!important;
+    overflow-y: auto!important;
+    background-color: #fff;
+}

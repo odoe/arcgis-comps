@@ -1,4 +1,4 @@
-import { Component, Element, Prop, Watch, h } from '@stencil/core';
+import { Component, Element, Prop, Watch, Event, EventEmitter } from '@stencil/core';
 
 // arcgis imports
 import Expand from '@arcgis/core/widgets/Expand';
@@ -21,9 +21,11 @@ export class ArcGISSearch {
   validateView(value: __esri.MapView) {
     if (value) {
         this.widget.view = value;
-        this.widget.view.ui.add(this.widget, this.position);
+        this.widget.view.ui.add(this.el, this.position);
     }
   }
+
+  @Event() loaded: EventEmitter<boolean>;
 
   componentWillLoad() {
       const expand = new Expand({
@@ -31,10 +33,11 @@ export class ArcGISSearch {
       });
 
       this.widget = expand;
+      this.loaded.emit(true);
   }
 
   componentDidRender() {
-    const elems = Array.from(this.el.children) as HTMLElement[];
+    const elems = Array.from(this.el.children);
     for (let e of elems) {
       if (e.tagName.toLowerCase().includes('arcgis-')) {
         (e as any).view = this.view;
@@ -42,12 +45,5 @@ export class ArcGISSearch {
         this.widget.expandIconClass = (e as any).widget.iconClass;
       }
     }
-  }
-
-  render() {
-    return (
-        <div class="expand-container">
-        </div>
-      );
   }
 }

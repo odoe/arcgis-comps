@@ -1,4 +1,4 @@
-import { Component, Element, Prop, h, Watch } from '@stencil/core';
+import { Component, Element, Prop, h, Watch, Event, EventEmitter  } from '@stencil/core';
 
 // arcgis imports
 import config from '@arcgis/core/config';
@@ -35,6 +35,8 @@ export class ArcGISWebMap {
     }
   }
 
+  @Event() loaded: EventEmitter<boolean>;
+
   componentWillLoad() {
       if (this.apiKey) {
         config.apiKey = this.apiKey;
@@ -46,9 +48,10 @@ export class ArcGISWebMap {
   }
 
   componentDidRender() {
+    // Find any arcgis-* components in View DOM
     const elem = this.el.querySelector('.esri-view-user-storage');
     if (elem) {
-      const elems = Array.from(elem.children) as HTMLElement[];
+      const elems = Array.from(elem.children);
       for (let e of elems) {
         if (e.tagName.toLowerCase().includes('arcgis-')) {
           (e as any).view = this.view;
@@ -86,7 +89,7 @@ export class ArcGISWebMap {
 
     this.view = view;
 
-    view.when(() => console.log('view ready'));
+    view.when(() => this.loaded.emit(true));
   }
 
   render() {

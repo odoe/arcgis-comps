@@ -26,8 +26,19 @@
     </style>
   </head>
   <body>
-    <arcgis-webmap item-id="3c245fe893234d4f85e4edaa41a9e0bf">
-    </arcgis-webmap>
+    <arcgis-portal url="https://jsapi.maps.arcgis.com">
+      <arcgis-webmap item-id="3c245fe893234d4f85e4edaa41a9e0bf">
+        <arcgis-expand position="top-right">
+          <arcgis-search></arcgis-search>
+        </arcgis-expand>
+        <arcgis-expand position="bottom-left">
+          <arcgis-basemap-gallery></arcgis-basemap-gallery>
+        </arcgis-expand>
+        <arcgis-expand position="bottom-right">
+          <arcgis-legend></arcgis-legend>
+        </arcgis-expand>
+      </arcgis-webmap>
+    </arcgis-portal>
     <div class="container">
       <arcgis-feature-table item-id="d419f6ba344848889db7ad62c45817db"></arcgis-feature-table>
     </div>
@@ -39,6 +50,17 @@
     elem.addEventListener("loaded", (value) => {
       console.log(value)
       console.log(elem.widget);
+      elem.fieldConfigs = [
+        {
+          name: "RECAREANAM",
+          label: "Recreation area name",
+          direction: "asc"
+        },
+        {
+          name: "FORESTNAME",
+          label: "Forest name"
+        }
+      ];
     });
   </script>
 </html>

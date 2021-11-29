@@ -2,6 +2,12 @@
 
 import type { Components, JSX } from "../types/components";
 
+interface ArcgisBasemapGallery extends Components.ArcgisBasemapGallery, HTMLElement {}
+export const ArcgisBasemapGallery: {
+  prototype: ArcgisBasemapGallery;
+  new (): ArcgisBasemapGallery;
+};
+
 interface ArcgisExpand extends Components.ArcgisExpand, HTMLElement {}
 export const ArcgisExpand: {
   prototype: ArcgisExpand;
@@ -24,6 +30,12 @@ interface ArcgisMap extends Components.ArcgisMap, HTMLElement {}
 export const ArcgisMap: {
   prototype: ArcgisMap;
   new (): ArcgisMap;
+};
+
+interface ArcgisPortal extends Components.ArcgisPortal, HTMLElement {}
+export const ArcgisPortal: {
+  prototype: ArcgisPortal;
+  new (): ArcgisPortal;
 };
 
 interface ArcgisSearch extends Components.ArcgisSearch, HTMLElement {}

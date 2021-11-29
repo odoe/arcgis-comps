@@ -1,4 +1,4 @@
-import { Component, Element, Prop, Watch, Event, EventEmitter, h } from '@stencil/core';
+import { Component, Element, Prop, Watch, Event, EventEmitter } from '@stencil/core';
 
 // arcgis imports
 import Search from '@arcgis/core/widgets/Search';
@@ -54,12 +54,5 @@ export class ArcGISSearch {
       search.on('suggest-start', (e) => this.suggestStart.emit(e));
 
       this.widget = search;
-  }
-
-  render() {
-    return (
-        <div class="search-container">
-        </div>
-      );
   }
 }

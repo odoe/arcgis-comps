@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter, Prop, Watch, h } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, Prop, Watch } from '@stencil/core';
 
 // arcgis imports
 import FeatureTable from '@arcgis/core/widgets/FeatureTable';
@@ -24,6 +24,23 @@ export class ArcGISFeatureTable {
 
   @Prop({ mutable: true }) widget: any;
 
+  private _fieldConfigs: any;
+  @Prop() fieldConfigs: any | string;
+
+  @Watch('fieldConfigs')
+  fieldConfigsWatcher(newValue: any| string) {
+    if (typeof newValue === 'string') {
+      this._fieldConfigs = JSON.parse(newValue);
+    }
+    else {
+      this._fieldConfigs = newValue;
+    }
+
+    if (this.widget) {
+      this.widget.fieldConfigs = this._fieldConfigs;
+    }
+  }
+
   @Watch('itemId')
   validateItemId(value: string, old: string) {
     if (value && value !== old) {
@@ -38,7 +55,7 @@ export class ArcGISFeatureTable {
 
   @Watch('layer')
   validateLayer(value: any) {
-    if (value) {
+    if (value && this.widget) {
       this.widget.layer = value;
     }
   }
@@ -65,8 +82,11 @@ export class ArcGISFeatureTable {
   @Event() rowSelectionChange: EventEmitter<__esri.FeatureTableSelectionChangeEvent>;
 
   componentWillLoad() {
+    if (this.fieldConfigs) {
+      this.fieldConfigsWatcher(this.fieldConfigs);
+    }
     const table = new FeatureTable({
-      container: this.el
+      container: this.el,
     });
 
     this.widget = table;
@@ -93,9 +113,5 @@ export class ArcGISFeatureTable {
     }
 
     this.loaded.emit(true);
-  }
-
-  render() {
-    return <div></div>;
   }
 }
