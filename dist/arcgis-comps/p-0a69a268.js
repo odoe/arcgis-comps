@@ -1,0 +1,1 @@
+import"./p-5420851c.js";import"./p-078c732e.js";class t{constructor(t){this.message=t}toString(){return`AssertException: ${this.message}`}}function r(r,o){if(!r){o=o||"assert";const r=new Error(o);throw r.stack&&console.log(r.stack),new t(o)}}export{r as i}

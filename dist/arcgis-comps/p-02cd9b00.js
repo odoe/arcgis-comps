@@ -1,0 +1,1 @@
+import{bF as r,W as t}from"./p-5420851c.js";function o(o){return{origin:"portal-item",url:r(o.itemUrl),portal:o.portal||t.getDefault(),portalItem:o,readResourcePaths:[]}}export{o}

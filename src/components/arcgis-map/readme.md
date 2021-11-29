@@ -15,6 +15,13 @@
 | `zoom`    | `zoom`    |             | `number`             | `undefined` |
 
 
+## Events
+
+| Event    | Description | Type                   |
+| -------- | ----------- | ---------------------- |
+| `loaded` |             | `CustomEvent<boolean>` |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
