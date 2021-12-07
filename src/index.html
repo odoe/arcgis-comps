@@ -28,28 +28,26 @@
   <body>
     <arcgis-portal url="https://jsapi.maps.arcgis.com">
       <arcgis-webmap item-id="3c245fe893234d4f85e4edaa41a9e0bf">
+        <arcgis-search position="top-right"></arcgis-search>
         <arcgis-expand position="top-right">
-          <arcgis-search></arcgis-search>
+          <arcgis-layer-list></arcgis-layer-list>
         </arcgis-expand>
         <arcgis-expand position="bottom-left">
-          <arcgis-basemap-gallery></arcgis-basemap-gallery>
+          <arcgis-basemap-gallery />
         </arcgis-expand>
         <arcgis-expand position="bottom-right">
-          <arcgis-legend></arcgis-legend>
+          <arcgis-legend />
         </arcgis-expand>
       </arcgis-webmap>
     </arcgis-portal>
     <div class="container">
-      <arcgis-feature-table item-id="d419f6ba344848889db7ad62c45817db"></arcgis-feature-table>
+      <arcgis-feature-table item-id="d419f6ba344848889db7ad62c45817db" />
     </div>
-    
   </body>
   <script>
-    console.log("start");
     const elem = document.querySelector("arcgis-feature-table");
     elem.addEventListener("loaded", (value) => {
-      console.log(value)
-      console.log(elem.widget);
+      console.log(elem.widget)
       elem.fieldConfigs = [
         {
           name: "RECAREANAM",

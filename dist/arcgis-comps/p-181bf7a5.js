@@ -1,0 +1,1 @@
+import{N as e}from"./p-e58503d5.js";const s=new e({MGRS:"mgrs",USNG:"usng",UTM:"utm",GeoRef:"geo-ref",GARS:"gars",DMS:"dms",DDM:"ddm",DD:"dd"});export{s as _}

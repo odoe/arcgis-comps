@@ -1,1 +1,0 @@
-import{ci as n,H as t}from"./p-5420851c.js";function r(r,o){const c=o||r.extent,u=r.width,i=t(c&&c.spatialReference);return c&&u?c.width/u*i*n*96:0}function o(r,o){const c=r.extent,u=r.width,i=function(r,o){return r/(t(o)*n*96)}(o,c.spatialReference);return c.clone().expand(i*u/c.width)}export{o as c,r}

@@ -68,6 +68,23 @@ export class ArcGISSearch {
         "tags": [],
         "text": ""
       }
+    },
+    "widget": {
+      "type": "any",
+      "mutable": true,
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      },
+      "attribute": "widget",
+      "reflect": false
     }
   }; }
   static get events() { return [{

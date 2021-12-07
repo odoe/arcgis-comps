@@ -12,6 +12,7 @@
 | `apiKey` | `api-key` |             | `string`             | `undefined` |
 | `center` | `center`  |             | `number[] \| string` | `undefined` |
 | `itemId` | `item-id` |             | `string`             | `undefined` |
+| `view`   | --        |             | `MapView`            | `undefined` |
 | `zoom`   | `zoom`    |             | `number`             | `undefined` |
 
 

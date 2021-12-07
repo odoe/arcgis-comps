@@ -1,4 +1,4 @@
-import { e as e$1 } from './VertexArrayObject.js';
+import { w as e$1 } from './index.js';
 
 /*
 All material copyright ESRI, All Rights Reserved, unless otherwise specified.

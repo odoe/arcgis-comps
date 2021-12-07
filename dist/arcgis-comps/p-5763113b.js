@@ -1,0 +1,1 @@
+function o(o,t,n){for(let r=0;r<n;++r)t[2*r]=o[r],t[2*r+1]=o[r]-t[2*r]}function t(t,e,a,f){for(let l=0;l<f;++l)n[0]=t[l],o(n,r,1),e[l]=r[0],a[l]=r[1]}const n=new Float64Array(1),r=new Float32Array(2);export{o,t as r}

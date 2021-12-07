@@ -1,10 +1,4 @@
-import { fM as t$1, t as t$2, k, d6 as y$1, bZ as mt, bW as nt, fN as e, fO as t$3 } from './index.js';
-
-/*
-All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-See https://js.arcgis.com/4.22/esri/copyright.txt for details.
-*/
-class j{constructor(e,t,s){this.uid=e,this.geometry=t,this.attributes=s,this.visible=!0,this.objectId=null,this.centroid=null;}}class N{constructor(){this.exceededTransferLimit=!1,this.features=[],this.fields=[],this.hasM=!1,this.hasZ=!1,this.geometryType=null,this.objectIdFieldName=null,this.globalIdFieldName=null,this.geometryProperties=null,this.geohashFieldName=null,this.spatialReference=null,this.transform=null;}}
+import { o2 as N, k0 as t$1, t as t$2, k, iL as y$1, c8 as mt, c5 as nt, o3 as j, o4 as e, o5 as t$3 } from './index.js';
 
 /*
 All material copyright ESRI, All Rights Reserved, unless otherwise specified.

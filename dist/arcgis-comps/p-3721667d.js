@@ -1,0 +1,1 @@
+function n(n){return 32+n.length}function r(){return 16}function t(r){if(!r)return 0;let t=32;for(const e in r)if(r.hasOwnProperty(e)){const o=r[e];switch(typeof o){case"string":t+=n(o);break;case"number":t+=16;break;case"boolean":t+=4}}return t}function e(n,r){return 32+n.length*r}export{t as e,n,e as r,r as t}

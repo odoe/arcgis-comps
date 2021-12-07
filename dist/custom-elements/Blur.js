@@ -1,7 +1,5 @@
-import { l } from './VertexArrayObject.js';
-import './index.js';
-import './Texture.js';
-import { r as r$1 } from './WGLContainer.js';
+import { u as l } from './index.js';
+import { r as r$1 } from './brushes.js';
 
 /*
 All material copyright ESRI, All Rights Reserved, unless otherwise specified.

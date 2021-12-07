@@ -1,0 +1,11 @@
+import { d, e, u, z, c, i as p$1, r, g as x$1 } from './mathUtils-e16f9389.js';
+import { s, c as c$1 } from './vectorStacks-9205ea46.js';
+import { b as t, n } from './common-d5b993de.js';
+
+/*
+All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+*/
+function v(t$1){return t$1?{origin:t(t$1.origin),vector:t(t$1.vector)}:{origin:n(),vector:n()}}function p(t,r){const n=x.get();return n.origin=t,n.vector=r,n}function h(t,r=v()){return m(t.origin,t.vector,r)}function m(t,r$1,o=v()){return r(o.origin,t),r(o.vector,r$1),o}function l(t,r$1,i=v()){return r(i.origin,t),c(i.vector,r$1,t),i}function b(r,n){const c$2=c(c$1.get(),n,r.origin),u=z(r.vector,c$2),s=z(r.vector,r.vector),a=e(u/s,0,1),g=c(c$1.get(),d(c$1.get(),r.vector,a),c$2);return z(g,g)}function j(t,r,n){return u(n,t.origin,d(n,t.vector,r))}function A(r,n,s,a,g){const{vector:v,origin:p}=r,h=c(c$1.get(),n,p),m=z(v,h)/p$1(v);return d(g,v,e(m,s,a)),u(g,g,r.origin)}function B(t,r){if(q(t,p(r.origin,r.direction),!1,w)){const{tA:r,pB:n,distance2:o}=w;if(r>=0&&r<=1)return o;if(r<0)return x$1(t.origin,n);if(r>1)return x$1(u(c$1.get(),t.origin,t.vector),n)}return null}function k(t,r$1,o){return !!q(t,r$1,!0,w)&&(r(o,w.pA),!0)}function q(r,n,o,i){const e$1=1e-6,u$1=r.origin,a=u(c$1.get(),u$1,r.vector),g=n.origin,v=u(c$1.get(),g,n.vector),p=c$1.get(),h=c$1.get();if(p[0]=u$1[0]-g[0],p[1]=u$1[1]-g[1],p[2]=u$1[2]-g[2],h[0]=v[0]-g[0],h[1]=v[1]-g[1],h[2]=v[2]-g[2],Math.abs(h[0])<e$1&&Math.abs(h[1])<e$1&&Math.abs(h[2])<e$1)return !1;const m=c$1.get();if(m[0]=a[0]-u$1[0],m[1]=a[1]-u$1[1],m[2]=a[2]-u$1[2],Math.abs(m[0])<e$1&&Math.abs(m[1])<e$1&&Math.abs(m[2])<e$1)return !1;const l=p[0]*h[0]+p[1]*h[1]+p[2]*h[2],b=h[0]*m[0]+h[1]*m[1]+h[2]*m[2],M=p[0]*m[0]+p[1]*m[1]+p[2]*m[2],d=h[0]*h[0]+h[1]*h[1]+h[2]*h[2],j=(m[0]*m[0]+m[1]*m[1]+m[2]*m[2])*d-b*b;if(Math.abs(j)<e$1)return !1;let A=(l*b-M*d)/j,B=(l+b*A)/d;o&&(A=e(A,0,1),B=e(B,0,1));const k=c$1.get(),S=c$1.get();return k[0]=u$1[0]+A*m[0],k[1]=u$1[1]+A*m[1],k[2]=u$1[2]+A*m[2],S[0]=g[0]+B*h[0],S[1]=g[1]+B*h[1],S[2]=g[2]+B*h[2],i.tA=A,i.tB=B,i.pA=k,i.pB=S,i.distance2=x$1(k,S),!0}const w={tA:0,tB:0,pA:n(),pB:n(),distance2:0},x=new s((()=>({origin:null,vector:null})));
+
+export { A, B, b, h, j, k, l, m, v };

@@ -1,0 +1,28 @@
+'use strict';
+
+const request = require('./messageBundle-8be88d04.js');
+const jsonUtils = require('./jsonUtils-b6068079.js');
+const utils = require('./utils-8a0a0870.js');
+
+/*
+All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+*/
+function r(t){return {geometryType:jsonUtils.v(t[0]),geometries:t.map((e=>e.toJSON()))}}function o(e,r,o){const n=jsonUtils.a(r);return e.map((e=>{const t=n.fromJSON(e);return t.spatialReference=o,t}))}
+
+/*
+All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+*/
+let i$1=class extends request.a$2{constructor(r){super(r),this.geometries=null,this.outSpatialReference=null,this.transformation=null,this.transformForward=null;}toJSON(){const r=this.geometries.map((function(r){return r.toJSON()})),t=this.geometries[0],o={};return o.outSR=this.outSpatialReference.wkid||JSON.stringify(this.outSpatialReference.toJSON()),o.inSR=t.spatialReference.wkid||JSON.stringify(t.spatialReference.toJSON()),o.geometries=JSON.stringify({geometryType:jsonUtils.v(t),geometries:r}),this.transformation&&(o.transformation=this.transformation.wkid||JSON.stringify(this.transformation)),null!=this.transformForward&&(o.transformForward=this.transformForward),o}};request.e([request.d()],i$1.prototype,"geometries",void 0),request.e([request.d({json:{read:{source:"outSR"}}})],i$1.prototype,"outSpatialReference",void 0),request.e([request.d()],i$1.prototype,"transformation",void 0),request.e([request.d()],i$1.prototype,"transformForward",void 0),i$1=request.e([request.i("esri.rest.support.ProjectParameters")],i$1);const a=i$1;
+
+/*
+All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+*/
+const i=request.b(a);async function n(o$1,m,n){m=i(m);const u=utils.e(o$1),c={...u.query,f:"json",...m.toJSON()},j=m.outSpatialReference,a=jsonUtils.v(m.geometries[0]),f=utils.r(c,n);return request.E(u.path+"/project",f).then((({data:{geometries:r}})=>o(r,a,j)))}
+
+exports.a = a;
+exports.n = n;
+exports.o = o;
+exports.r = r;

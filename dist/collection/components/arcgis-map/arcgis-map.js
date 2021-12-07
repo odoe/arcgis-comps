@@ -120,6 +120,25 @@ export class ArcGISMap {
       },
       "attribute": "center",
       "reflect": false
+    },
+    "view": {
+      "type": "unknown",
+      "mutable": true,
+      "complexType": {
+        "original": "__esri.MapView",
+        "resolved": "MapView",
+        "references": {
+          "___esri": {
+            "location": "global"
+          }
+        }
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      }
     }
   }; }
   static get events() { return [{

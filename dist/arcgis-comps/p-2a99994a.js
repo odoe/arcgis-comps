@@ -1,0 +1,1 @@
+function e(e){return t=>{t.hasOwnProperty("_delegatedEventNames")||(t._delegatedEventNames=t._delegatedEventNames?t._delegatedEventNames.slice():[]);const n=t._delegatedEventNames,r=Array.isArray(e)?e:e.split(",").map((e=>e.trim()));n.push(...r)}}export{e as t}

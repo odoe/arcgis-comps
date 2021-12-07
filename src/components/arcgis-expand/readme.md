@@ -11,6 +11,7 @@
 | ---------- | ---------- | ----------- | ---------------------- | ----------- |
 | `position` | `position` |             | `string`               | `undefined` |
 | `view`     | --         |             | `MapView \| SceneView` | `undefined` |
+| `widget`   | `widget`   |             | `any`                  | `undefined` |
 
 
 ## Events

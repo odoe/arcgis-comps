@@ -21,7 +21,7 @@ export class ArcGISWebMap {
 
   @Prop() center: number[] | string;
 
-  public view: __esri.MapView;
+  @Prop({ mutable: true }) view: __esri.MapView;
 
   @Watch('apiKey')
   validateApiKey(value: string) {
@@ -61,11 +61,15 @@ export class ArcGISWebMap {
   }
 
   loadMap() {
-    const map = new WebMap({
-        portalItem: {
+    const mapParams : __esri.WebMapProperties = {};
+
+    if (this.itemId) {
+        mapParams.portalItem = {
             id: this.itemId
-        }
-    });
+        };
+    }
+
+    const map = new WebMap(mapParams);
 
     const params: any = {};
 

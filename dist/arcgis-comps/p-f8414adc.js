@@ -1,0 +1,1 @@
+import{e as t}from"./p-8925cd73.js";import{s as e,t as o}from"./p-182bb5be.js";const r={getObjectId:t=>t.objectId,getAttributes:t=>t.attributes,getAttribute:(t,e)=>t.attributes[e],cloneWithGeometry:(t,o)=>new e(o,t.attributes,null,t.objectId),getGeometry:t=>t.geometry,getCentroid:(e,r)=>(e.centroid||(e.centroid=t(new o,e.geometry,r.hasZ,r.hasM)),e.centroid)};export{r as o}

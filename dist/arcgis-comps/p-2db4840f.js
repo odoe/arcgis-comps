@@ -1,0 +1,1 @@
+import{af as o}from"./p-e58503d5.js";import{t as f}from"./p-bba8b671.js";function r(r,t,i){if(!i||!i.features||!i.hasZ)return;const n=f(i.geometryType,t,r.outSpatialReference);if(!o(n))for(const o of i.features)n(o.geometry)}export{r}

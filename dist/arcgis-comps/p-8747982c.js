@@ -1,0 +1,1 @@
+import{e,i as t}from"./p-e58503d5.js";let s=0;const r=r=>{let c=class extends r{constructor(...e){super(...e),Object.defineProperty(this,"uid",{writable:!1,configurable:!1,value:Date.now().toString(16)+"-object-"+s++})}};return c=e([t("esri.core.Identifiable")],c),c};let c=class extends(r(class{})){};c=e([t("esri.core.Identifiable")],c);export{r}

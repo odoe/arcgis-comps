@@ -30,14 +30,14 @@ export class ArcGISBasemapGallery {
   @Event() loaded: EventEmitter<boolean>;
 
   componentWillLoad() {
-    const bmg = new BasemapGallery({
+    const widget = new BasemapGallery({
       container: this.el,
     });
 
-    this.widget = bmg;
+    this.widget = widget;
 
     if (this.view) {
-        bmg.view = this.view as any;
+        widget.view = this.view as any;
     }
 
     this.loaded.emit(true);

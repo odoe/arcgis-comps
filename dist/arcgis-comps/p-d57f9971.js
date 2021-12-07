@@ -1,0 +1,1 @@
+function n(){return[1,0,0,1,0,0]}function r(n){return[n[0],n[1],n[2],n[3],n[4],n[5]]}Object.freeze({__proto__:null,create:n,clone:r,fromValues:function(n,r,e,t,o,u){return[n,r,e,t,o,u]},createView:function(n,r){return new Float64Array(n,r,6)}});export{n as e,r as n}

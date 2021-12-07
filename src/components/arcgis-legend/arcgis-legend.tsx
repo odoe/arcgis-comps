@@ -15,7 +15,7 @@ export class ArcGISLegend {
 
   @Prop() view : __esri.MapView | __esri.SceneView;
 
-  @Prop() widget: any;
+  @Prop({ mutable: true }) widget: any;
 
   @Watch('view')
   validateView(value: __esri.MapView | __esri.SceneView) {

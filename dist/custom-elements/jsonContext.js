@@ -1,4 +1,4 @@
-import { c7 as U, c6 as B } from './index.js';
+import { ci as U, ch as B } from './index.js';
 
 /*
 All material copyright ESRI, All Rights Reserved, unless otherwise specified.

@@ -1,0 +1,1 @@
+import{h as t}from"./p-b0565d49.js";class s{constructor(s,r){this._storage=new t,this._storage.maxSize=s,r&&this._storage.registerRemoveFunc("",r)}put(t,s){this._storage.put(t,s,1,1)}pop(t){return this._storage.pop(t)}get(t){return this._storage.get(t)}clear(){this._storage.clearAll()}destroy(){this._storage.destroy()}}export{s as e}

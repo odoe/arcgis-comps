@@ -1,0 +1,12 @@
+'use strict';
+
+const PopupTemplate = require('./PopupTemplate-a0b855f8.js');
+const opacityUtils = require('./opacityUtils-f2e4b347.js');
+
+/*
+All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+*/
+const l=["oid","global-id"],s=["oid","global-id","guid"];function a({displayField:t,editFieldsInfo:i,fields:o,objectIdField:n,title:r},l){if(!o)return null;const s=b({editFieldsInfo:i,fields:o,objectIdField:n},l);if(!s.length)return null;const a=j({titleBase:r,fields:o,displayField:t}),d=C();return new PopupTemplate.M({title:a,content:d,fieldInfos:s})}const d=[/^fnode_$/i,/^tnode_$/i,/^lpoly_$/i,/^rpoly_$/i,/^poly_$/i,/^subclass$/i,/^subclass_$/i,/^rings_ok$/i,/^rings_nok$/i,/shape/i,/perimeter/i,/objectid/i,/_i$/i],p=(e,{editFieldsInfo:t,objectIdField:i,visibleFieldNames:o})=>o?o.has(e.name):!f(e.name,t)&&((!i||e.name!==i)&&(!(l.indexOf(e.type)>-1)&&!d.some((t=>t.test(e.name)))));function u(e,t){const i=e;return t&&(e=e.filter((e=>-1===t.indexOf(e.type)))),e===i&&(e=e.slice()),e.sort(c),e}function c(e,t){return "oid"===e.type?-1:"oid"===t.type?1:y(e)?-1:y(t)?1:(e.alias||e.name).toLocaleLowerCase().localeCompare((t.alias||t.name).toLocaleLowerCase())}function f(e,t){if(!e||!t)return !1;const{creationDateField:i,creatorField:o,editDateField:n,editorField:r}=t;return -1!==[i&&i.toLowerCase(),o&&o.toLowerCase(),n&&n.toLowerCase(),r&&r.toLowerCase()].indexOf(e.toLowerCase())}function m(e,t){return e.editable&&-1===s.indexOf(e.type)&&!f(e.name,t)}function b({editFieldsInfo:e,fields:t,objectIdField:i},o){return u(t,(null==o?void 0:o.ignoreFieldTypes)||g).map((t=>new PopupTemplate.c$2({fieldName:t.name,isEditable:m(t,e),label:t.alias,format:w(t),visible:p(t,{editFieldsInfo:e,objectIdField:i,visibleFieldNames:null==o?void 0:o.visibleFieldNames})})))}function w(e){switch(e.type){case"small-integer":case"integer":case"single":return new PopupTemplate.u({digitSeparator:!0,places:0});case"double":return new PopupTemplate.u({digitSeparator:!0,places:2});case"date":return new PopupTemplate.u({dateFormat:"long-month-day-year"});default:return null}}function C(){return [new PopupTemplate.c$3,new PopupTemplate.p]}function j(e){const i=opacityUtils.h(e),{titleBase:o}=e;return i?`${o}: {${i.trim()}}`:o}function y(e){if("name"===(e.name&&e.name.toLowerCase()))return !0;return "name"===(e.alias&&e.alias.toLowerCase())||void 0}const g=["geometry","blob","raster","guid","xml"];
+
+exports.a = a;

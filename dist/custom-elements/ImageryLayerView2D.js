@@ -1,5 +1,5 @@
-import { u as s, e, d as d$1, cy as r, i, ae as p$1, gS as c, z, M, r as r$1, K as d$2, ah as c$1, h, E, gB as g$1, s as s$1, fu as b, an as b$1, a2 as i$4, gT as f } from './index.js';
-import { l, u as u$1 } from './LayerView.js';
+import { L as s, e, d as d$1, h6 as r, i, ah as p$1, ox as c, z, M, r as r$1, J as d$2, ak as c$1, h, E, a4 as i$4, jj as f, fz as u$1 } from './index.js';
+import { l } from './LayerView2D.js';
 import { j as j$1 } from './rasterProjectionHelper.js';
 import { m } from './vectorFieldUtils.js';
 import { n } from './Container.js';
@@ -9,7 +9,7 @@ import { d as d$3 } from './pixelUtils.js';
 import { t } from './BitmapContainer.js';
 import { i as i$2 } from './Bitmap.js';
 import { S } from './ExportStrategy.js';
-import { d as d$4 } from './popupUtils.js';
+import { u } from './ImageryLayerView.js';
 import { i as i$3 } from './RefreshableLayerView.js';
 
 /*
@@ -23,12 +23,6 @@ All material copyright ESRI, All Rights Reserved, unless otherwise specified.
 See https://js.arcgis.com/4.22/esri/copyright.txt for details.
 */
 const y=s.getLogger("esri.views.2d.layers.imagery.ImageryView2D");let g=class extends p$1{constructor(){super(...arguments),this.attached=!1,this.container=new n,this.updateRequested=!1,this.type="Imagery",this._bitmapView=null;}destroy(){this.attached&&(this.detach(),this.attached=!1),this.updateRequested=!1;}get updating(){return !this.attached||this.isUpdating()}update(e){this.strategy.update(e).catch((e=>{d$2(e)||y.error(e);}));}detach(){this.strategy.destroy(),this._bitmapView.removeAllChildren(),this.container.removeAllChildren();}hitTest(e,r){const i=this.view.toMap(c$1(e,r));return Promise.resolve(new h({attributes:{},geometry:i,layer:this.layer}))}attach(){const e=this.layer.version>=10,t$1=this.layer.version>=10.1?this.layer.imageMaxHeight:2048,r=this.layer.version>=10.1?this.layer.imageMaxWidth:2048;this._bitmapView=new t,this.strategy=new S({container:this._bitmapView,imageNormalizationSupported:e,imageMaxHeight:t$1,imageMaxWidth:r,fetchSource:this._fetchImage.bind(this),requestUpdate:()=>this.requestUpdate()}),this.attached=!0;}install(e){this.container.addChild(this._bitmapView),e.addChild(this.container);}uninstall(e){this.container.removeChild(this._bitmapView),e.removeChild(this.container);}redraw(){this.strategy.updateExports((e=>{e.source instanceof HTMLImageElement?e.requestRender():this.layer.applyRenderer({pixelBlock:e.source.pixelBlock}).then((t=>{const r=e.source;r.pixelBlock=t.pixelBlock,r.filter=e=>this.layer.applyFilter(e),this.container.requestRender();}));}));}requestUpdate(){this.updateRequested||(this.updateRequested=!0,this.view.requestUpdate());}isUpdating(){return this.strategy.updating||this.updateRequested}getPixelData(){if(this.updating)return null;const e=this.strategy.bitmaps;if(1===e.length&&e[0].source)return {extent:e[0].source.extent,pixelBlock:e[0].source.originalPixelBlock};if(e.length>1){const t=this.view.extent,r=e.map((e=>e.source)).filter((e=>e.extent&&e.extent.intersects(t))).map((e=>({extent:e.extent,pixelBlock:e.originalPixelBlock}))),i=d$3(r,t);return r$1(i)?{extent:i.extent,pixelBlock:i.pixelBlock}:null}return null}_fetchImage(e,t,r,i){return (i=i||{}).timeExtent=this.timeExtent,i.requestAsImageElement=!0,this.layer.fetchImage(e,t,r,i).then((e=>e.imageElement?e.imageElement:this.layer.applyRenderer(e.pixelData,{signal:i.signal}).then((t=>{const r=new i$2(t.pixelBlock,t.extent.clone(),e.pixelData.pixelBlock);return r.filter=e=>this.layer.applyFilter(e),r}))))}};e([d$1()],g.prototype,"attached",void 0),e([d$1()],g.prototype,"container",void 0),e([d$1()],g.prototype,"layer",void 0),e([d$1()],g.prototype,"strategy",void 0),e([d$1()],g.prototype,"timeExtent",void 0),e([d$1()],g.prototype,"view",void 0),e([d$1()],g.prototype,"updateRequested",void 0),e([d$1()],g.prototype,"updating",null),e([r({imagery:"Imagery"})],g.prototype,"type",void 0),g=e([i("esri.views.2d.layers.imagery.ImageryView2D")],g);const x=g;
-
-/*
-All material copyright ESRI, All Rights Reserved, unless otherwise specified.
-See https://js.arcgis.com/4.22/esri/copyright.txt for details.
-*/
-const u=u=>{let m=class extends u{constructor(){super(...arguments),this.view=null;}async fetchPopupFeatures(e,o){const{layer:s}=this;if(!e)throw new s$1("imagerylayerview:fetchPopupFeatures","Nothing to fetch without area",{layer:s});const{popupEnabled:i}=s,u=d$4(s,o);if(!i||!r$1(u))throw new s$1("imagerylayerview:fetchPopupFeatures","Missing required popupTemplate or popupEnabled",{popupEnabled:i,popupTemplate:u});const m=await u.getRequiredFields(),c=new b;c.timeExtent=this.timeExtent,c.geometry=e,c.outFields=m,c.outSpatialReference=e.spatialReference;const l=this.view.resolution,y="2d"===this.view.type?new b$1(l,l,this.view.spatialReference):new b$1(.5*l,.5*l,this.view.spatialReference),{returnTopmostRaster:h,showNoDataRecords:w}=u.layerOptions||{returnTopmostRaster:!0,showNoDataRecords:!1},d={returnDomainValues:!0,returnTopmostRaster:h,pixelSize:y,showNoDataRecords:w,signal:r$1(o)?o.signal:null};return s.queryVisibleRasters(c,d).then((e=>e))}canResume(){var e;return !!super.canResume()&&(null==(e=this.timeExtent)||!e.isEmpty)}};return e([d$1()],m.prototype,"layer",void 0),e([d$1()],m.prototype,"suspended",void 0),e([d$1(g$1)],m.prototype,"timeExtent",void 0),e([d$1()],m.prototype,"view",void 0),m=e([i("esri.views.layers.ImageryLayerView")],m),m};
 
 /*
 All material copyright ESRI, All Rights Reserved, unless otherwise specified.

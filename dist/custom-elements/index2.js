@@ -1,4 +1,4 @@
-import { o } from './_commonjsHelpers2.js';
+import { o } from './_commonjsHelpers.js';
 
 /*
 All material copyright ESRI, All Rights Reserved, unless otherwise specified.

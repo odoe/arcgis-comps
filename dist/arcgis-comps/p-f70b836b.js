@@ -1,0 +1,1 @@
+async function n(n,t){if("2d"===n.type)return n.hitTest(t);const r=await n.hitTest(t),a=r.results[0],c=r.results.findIndex((n=>n.distance!==a.distance));return-1!==c&&(r.results=r.results.slice(0,c)),r}export{n as t}

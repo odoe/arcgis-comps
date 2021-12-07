@@ -15,7 +15,7 @@ export class ArcGISSearch {
 
   @Prop() view : __esri.MapView | __esri.SceneView;
 
-  public widget: Expand;
+  @Prop({ mutable: true }) widget: any;
 
   @Watch('view')
   validateView(value: __esri.MapView) {

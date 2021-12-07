@@ -71,7 +71,7 @@ export class ArcGISSearch {
     },
     "widget": {
       "type": "any",
-      "mutable": false,
+      "mutable": true,
       "complexType": {
         "original": "any",
         "resolved": "any",

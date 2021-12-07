@@ -1,0 +1,6 @@
+@import url('https://js.arcgis.com/next/esri/themes/light/main.css');
+
+.scene-view {
+    padding: 0;
+    margin: 0;
+}

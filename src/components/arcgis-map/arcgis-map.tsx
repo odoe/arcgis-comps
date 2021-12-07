@@ -23,7 +23,7 @@ export class ArcGISMap {
 
   @Prop() center: number[] | string;
 
-  public view: __esri.MapView;
+  @Prop({ mutable: true }) view: __esri.MapView;
 
   @Watch('apiKey')
   validateApiKey(value: string) {

@@ -33,11 +33,13 @@ export class ArcGISWebMap {
     }
   }
   loadMap() {
-    const map = new WebMap({
-      portalItem: {
+    const mapParams = {};
+    if (this.itemId) {
+      mapParams.portalItem = {
         id: this.itemId
-      }
-    });
+      };
+    }
+    const map = new WebMap(mapParams);
     const params = {};
     if (this.zoom) {
       params.zoom = this.zoom;
@@ -132,6 +134,25 @@ export class ArcGISWebMap {
       },
       "attribute": "center",
       "reflect": false
+    },
+    "view": {
+      "type": "unknown",
+      "mutable": true,
+      "complexType": {
+        "original": "__esri.MapView",
+        "resolved": "MapView",
+        "references": {
+          "___esri": {
+            "location": "global"
+          }
+        }
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": ""
+      }
     }
   }; }
   static get events() { return [{

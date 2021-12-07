@@ -1,0 +1,1 @@
+import{b as s,d as t}from"./p-90239435.js";class r extends s{constructor(s){super(),this.point=s}equals(s){return s instanceof r&&t(this.point,s.point)}}export{r as s}

@@ -1,5 +1,6 @@
-import { a, G } from './WGLContainer.js';
+import { G } from './brushes.js';
 import { I } from './Utils.js';
+import { a } from './WGLContainer.js';
 
 /*
 All material copyright ESRI, All Rights Reserved, unless otherwise specified.

@@ -8,6 +8,36 @@ export const ArcgisBasemapGallery: {
   new (): ArcgisBasemapGallery;
 };
 
+interface ArcgisBasemapToggle extends Components.ArcgisBasemapToggle, HTMLElement {}
+export const ArcgisBasemapToggle: {
+  prototype: ArcgisBasemapToggle;
+  new (): ArcgisBasemapToggle;
+};
+
+interface ArcgisBookmarks extends Components.ArcgisBookmarks, HTMLElement {}
+export const ArcgisBookmarks: {
+  prototype: ArcgisBookmarks;
+  new (): ArcgisBookmarks;
+};
+
+interface ArcgisCoordinateConversion extends Components.ArcgisCoordinateConversion, HTMLElement {}
+export const ArcgisCoordinateConversion: {
+  prototype: ArcgisCoordinateConversion;
+  new (): ArcgisCoordinateConversion;
+};
+
+interface ArcgisDirections extends Components.ArcgisDirections, HTMLElement {}
+export const ArcgisDirections: {
+  prototype: ArcgisDirections;
+  new (): ArcgisDirections;
+};
+
+interface ArcgisEditor extends Components.ArcgisEditor, HTMLElement {}
+export const ArcgisEditor: {
+  prototype: ArcgisEditor;
+  new (): ArcgisEditor;
+};
+
 interface ArcgisExpand extends Components.ArcgisExpand, HTMLElement {}
 export const ArcgisExpand: {
   prototype: ArcgisExpand;
@@ -18,6 +48,12 @@ interface ArcgisFeatureTable extends Components.ArcgisFeatureTable, HTMLElement 
 export const ArcgisFeatureTable: {
   prototype: ArcgisFeatureTable;
   new (): ArcgisFeatureTable;
+};
+
+interface ArcgisLayerList extends Components.ArcgisLayerList, HTMLElement {}
+export const ArcgisLayerList: {
+  prototype: ArcgisLayerList;
+  new (): ArcgisLayerList;
 };
 
 interface ArcgisLegend extends Components.ArcgisLegend, HTMLElement {}
@@ -38,6 +74,12 @@ export const ArcgisPortal: {
   new (): ArcgisPortal;
 };
 
+interface ArcgisPrint extends Components.ArcgisPrint, HTMLElement {}
+export const ArcgisPrint: {
+  prototype: ArcgisPrint;
+  new (): ArcgisPrint;
+};
+
 interface ArcgisSearch extends Components.ArcgisSearch, HTMLElement {}
 export const ArcgisSearch: {
   prototype: ArcgisSearch;
@@ -48,6 +90,12 @@ interface ArcgisWebmap extends Components.ArcgisWebmap, HTMLElement {}
 export const ArcgisWebmap: {
   prototype: ArcgisWebmap;
   new (): ArcgisWebmap;
+};
+
+interface ArcgisWebscene extends Components.ArcgisWebscene, HTMLElement {}
+export const ArcgisWebscene: {
+  prototype: ArcgisWebscene;
+  new (): ArcgisWebscene;
 };
 
 /**

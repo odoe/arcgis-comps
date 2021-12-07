@@ -1,0 +1,83 @@
+'use strict';
+
+const request = require('./messageBundle-8be88d04.js');
+const TimeExtent = require('./TimeExtent-8b558884.js');
+const HandleOwner = require('./HandleOwner-9c4c158c.js');
+const loadAll = require('./loadAll-e25ec3d0.js');
+const MultiOriginJSONSupport = require('./MultiOriginJSONSupport-77ac451b.js');
+const scaleUtils = require('./scaleUtils-5c377ab3.js');
+const Layer = require('./Layer-31cde361.js');
+const APIKeyMixin = require('./APIKeyMixin-77c99036.js');
+const SublayersOwner = require('./SublayersOwner-98b1c5c4.js');
+const ArcGISService = require('./ArcGISService-56d7a630.js');
+const BlendLayer = require('./BlendLayer-6a2ab430.js');
+const CustomParametersMixin = require('./CustomParametersMixin-996a5732.js');
+const OperationalLayer = require('./OperationalLayer-853649aa.js');
+const PortalLayer = require('./PortalLayer-7556e594.js');
+const RefreshableLayer = require('./RefreshableLayer-487bd7b3.js');
+const ScaleRangeLayer = require('./ScaleRangeLayer-5320a5ba.js');
+const TemporalLayer = require('./TemporalLayer-06f08bdd.js');
+const ExportImageParameters = require('./ExportImageParameters-c9c5796e.js');
+const sublayerUtils = require('./sublayerUtils-a9071b30.js');
+require('./index-fde8502c.js');
+require('./reactiveUtils-ef5dccea.js');
+require('./asyncUtils-cd78b718.js');
+require('./Portal-8d16604d.js');
+require('./unitUtils-083cb8d0.js');
+require('./geometry-ef17530a.js');
+require('./Identifiable-a4f50f85.js');
+require('./Version-55b8a4e7.js');
+require('./CollectionFlattener-bc4cde45.js');
+require('./PopupTemplate-a0b855f8.js');
+require('./opacityUtils-f2e4b347.js');
+require('./enumeration-f235fe07.js');
+require('./UniqueValueRenderer-1c485e9f.js');
+require('./symbols-29b793e5.js');
+require('./Symbol-f0556e23.js');
+require('./Color-7d915caa.js');
+require('./colorUtils-e70dbab5.js');
+require('./mathUtils-af6066f0.js');
+require('./common-41a349f2.js');
+require('./screenUtils-d911ae62.js');
+require('./aaBoundingBox-c372701a.js');
+require('./aaBoundingRect-56648c00.js');
+require('./persistableUrlUtils-c611d652.js');
+require('./VisualVariablesMixin-a105fcfa.js');
+require('./colorRamps-d0c2cb9d.js');
+require('./ColorStop-ce63948c.js');
+require('./sizeVariableUtils-9012516e.js');
+require('./visualVariableUtils-1740874b.js');
+require('./Graphic-0aff6059.js');
+require('./jsonUtils-b6068079.js');
+require('./lengthUtils-179eaf12.js');
+require('./diffUtils-df69757f.js');
+require('./jsonUtils-62d28b73.js');
+require('./styleUtils-2b475600.js');
+require('./DictionaryRenderer-a0dce499.js');
+require('./LRUCache-38fdf18d.js');
+require('./MemCache-7f5503ec.js');
+require('./jsonUtils-fc4080da.js');
+require('./FeatureType-d8b81062.js');
+require('./Field-b92c6f4a.js');
+require('./fieldType-32f95259.js');
+require('./FieldsIndex-664af19b.js');
+require('./LabelClass-4b91d60e.js');
+require('./labelUtils-73814dda.js');
+require('./defaultsJSON-0cdf7a99.js');
+require('./LayerFloorInfo-c56fa764.js');
+require('./Query-354911d3.js');
+require('./popupUtils-7a76fb7d.js');
+require('./floorFilterUtils-a9b30733.js');
+require('./arcgisLayerUrl-5174d661.js');
+require('./mat4-f68486bc.js');
+require('./ElevationInfo-d3e3d64f.js');
+require('./PortalItem-8bcd02f8.js');
+require('./TimeInfo-050c5617.js');
+
+/*
+All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+See https://js.arcgis.com/4.22/esri/copyright.txt for details.
+*/
+let q=class extends(BlendLayer.i(TemporalLayer.a(ScaleRangeLayer.s(SublayersOwner.f(SublayersOwner.y(ArcGISService.p(OperationalLayer.y(PortalLayer.w(MultiOriginJSONSupport.l(RefreshableLayer.n(APIKeyMixin.i(CustomParametersMixin.o(HandleOwner.a(Layer.b)))))))))))))){constructor(...e){super(...e),this.datesInUnknownTimezone=!1,this.dpi=96,this.gdbVersion=null,this.imageFormat="png24",this.imageMaxHeight=2048,this.imageMaxWidth=2048,this.imageTransparency=!0,this.isReference=null,this.labelsVisible=!1,this.operationalLayerType="ArcGISMapServiceLayer",this.sourceJSON=null,this.sublayers=null,this.type="map-image",this.url=null;}normalizeCtorArgs(e,r){return "string"==typeof e?{url:e,...r}:e}load(e){const r=request.r(e)?e.signal:null;return this.addResolvingPromise(this.loadFromPortal({supportedTypes:["Map Service"]},e).catch(request.b$1).then((()=>this._fetchService(r)))),Promise.resolve(this)}readImageFormat(e,r){const t=r.supportedImageFormatTypes;return t&&t.indexOf("PNG32")>-1?"png32":"png24"}writeSublayers(e,r,t,o){if(!this.loaded||!e)return;const i=e.slice().reverse().flatten((({sublayers:e})=>e&&e.toArray().reverse())).toArray();let s=!1;if(this.capabilities&&this.capabilities.operations.supportsExportMap&&this.capabilities.exportMap.supportsDynamicLayers){const e=request.t$4(o.origin);if(3===e){const e=this.createSublayersForOrigin("service").sublayers;s=sublayerUtils.e(i,e,2);}else if(e>3){const e=this.createSublayersForOrigin("portal-item");s=sublayerUtils.e(i,e.sublayers,request.t$4(e.origin));}}const a=[],p={writeSublayerStructure:s,...o};let n=s;i.forEach((e=>{const r=e.write({},p);a.push(r),n=n||"user"===e.originOf("visible");}));a.some((e=>Object.keys(e).length>1))&&(r.layers=a),n&&(r.visibleLayers=i.filter((e=>e.visible)).map((e=>e.id)));}createExportImageParameters(e,r,t,o){const i=o&&o.pixelRatio||1;e&&this.version>=10&&(e=e.clone().shiftCentralMeridian());const s=new ExportImageParameters.c({layer:this,floors:null==o?void 0:o.floors,scale:scaleUtils.r({extent:e,width:r})*i}),a=s.toJSON();s.destroy();const p=!o||!o.rotation||this.version<10.3?{}:{rotation:-o.rotation},n=e&&e.spatialReference,m=n.wkid||JSON.stringify(n.toJSON());a.dpi*=i;const l={};if(null!=o&&o.timeExtent){const{start:e,end:r}=o.timeExtent.toJSON();l.time=e&&r&&e===r?""+e:`${null==e?"null":e},${null==r?"null":r}`;}else this.timeInfo&&!this.timeInfo.hasLiveData&&(l.time="null,null");return {bbox:e&&e.xmin+","+e.ymin+","+e.xmax+","+e.ymax,bboxSR:m,imageSR:m,size:r+","+t,...a,...p,...l}}async fetchImage(e,t,i,s){var a;const p={responseType:"image",signal:null!=(a=null==s?void 0:s.signal)?a:null,query:{...this.parsedUrl.query,...this.createExportImageParameters(e,t,i,s),f:"image",...this.refreshParameters,...this.customParameters,token:this.apiKey}},n=this.parsedUrl.path+"/export";if(null!=p.query.dynamicLayers&&!this.capabilities.exportMap.supportsDynamicLayers)return Promise.reject(new request.s("mapimagelayer:dynamiclayer-not-supported",`service ${this.url} doesn't support dynamic layers, which is required to be able to change the sublayer's order, rendering, labeling or source.`,{query:p.query}));return request.E(n,p).then((e=>e.data)).catch((e=>{if(request.d$1(e))throw e;throw new request.s("mapimagelayer:image-fetch-error",`Unable to load image: ${n}`,{error:e})}))}async fetchRecomputedExtents(e={}){const o={...e,query:{returnUpdates:!0,f:"json",...this.customParameters,token:this.apiKey}},{data:i}=await request.E(this.url,o),{extent:s,fullExtent:a,timeExtent:p}=i,n=s||a;return {fullExtent:n&&request.M.fromJSON(n),timeExtent:p&&TimeExtent.y.fromJSON({start:p[0],end:p[1]})}}loadAll(){return loadAll.n(this,(e=>{e(this.allSublayers);}))}async _fetchService(e){if(this.sourceJSON)return void this.read(this.sourceJSON,{origin:"service",url:this.parsedUrl});const{data:t,ssl:o}=await request.E(this.parsedUrl.path,{query:{f:"json",...this.parsedUrl.query,...this.customParameters,token:this.apiKey},signal:e});o&&(this.url=this.url.replace(/^http:/i,"https:")),this.sourceJSON=t,this.read(t,{origin:"service",url:this.parsedUrl});}};request.e([request.d({type:Boolean})],q.prototype,"datesInUnknownTimezone",void 0),request.e([request.d()],q.prototype,"dpi",void 0),request.e([request.d()],q.prototype,"gdbVersion",void 0),request.e([request.d()],q.prototype,"imageFormat",void 0),request.e([request.o$2("imageFormat",["supportedImageFormatTypes"])],q.prototype,"readImageFormat",null),request.e([request.d({json:{origins:{service:{read:{source:"maxImageHeight"}}}}})],q.prototype,"imageMaxHeight",void 0),request.e([request.d({json:{origins:{service:{read:{source:"maxImageWidth"}}}}})],q.prototype,"imageMaxWidth",void 0),request.e([request.d()],q.prototype,"imageTransparency",void 0),request.e([request.d({type:Boolean,json:{read:!1,write:{enabled:!0,overridePolicy:()=>({enabled:!1})}}})],q.prototype,"isReference",void 0),request.e([request.d({json:{read:!1,write:!1}})],q.prototype,"labelsVisible",void 0),request.e([request.d({type:["ArcGISMapServiceLayer"]})],q.prototype,"operationalLayerType",void 0),request.e([request.d({json:{read:!1,write:!1}})],q.prototype,"popupEnabled",void 0),request.e([request.d()],q.prototype,"sourceJSON",void 0),request.e([request.d({json:{write:{ignoreOrigin:!0}}})],q.prototype,"sublayers",void 0),request.e([request.r$2("sublayers",{layers:{type:[SublayersOwner.K]},visibleLayers:{type:[request.S$2]}})],q.prototype,"writeSublayers",null),request.e([request.d({type:["show","hide","hide-children"]})],q.prototype,"listMode",void 0),request.e([request.d({json:{read:!1},readOnly:!0,value:"map-image"})],q.prototype,"type",void 0),request.e([request.d(OperationalLayer.f)],q.prototype,"url",void 0),q=request.e([request.i("esri.layers.MapImageLayer")],q);const A=q;
+
+exports.default = A;

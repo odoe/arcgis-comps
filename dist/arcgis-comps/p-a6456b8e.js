@@ -1,0 +1,1 @@
+import{Z as r}from"./p-e58503d5.js";import{B as o}from"./p-efbca0ca.js";function t(t){return{origin:"portal-item",url:r(t.itemUrl),portal:t.portal||o.getDefault(),portalItem:t,readResourcePaths:[]}}export{t as o}

@@ -1,6 +1,4 @@
-import './VertexArrayObject.js';
-import './index.js';
-import { o } from './Texture.js';
+import { A as o } from './index.js';
 
 /*
 All material copyright ESRI, All Rights Reserved, unless otherwise specified.

@@ -14,12 +14,12 @@ export class ArcGISBasemapGallery {
     }
   }
   componentWillLoad() {
-    const bmg = new BasemapGallery({
+    const widget = new BasemapGallery({
       container: this.el,
     });
-    this.widget = bmg;
+    this.widget = widget;
     if (this.view) {
-      bmg.view = this.view;
+      widget.view = this.view;
     }
     this.loaded.emit(true);
   }
