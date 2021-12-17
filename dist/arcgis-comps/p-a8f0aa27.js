@@ -1,1 +1,0 @@
-import"./p-e58503d5.js";function n(n){return n&&"function"==typeof n.render}function t(n){return n&&"function"==typeof n.postMixInProperties&&"function"==typeof n.buildRendering&&"function"==typeof n.postCreate&&"function"==typeof n.startup}export{n as e,t}

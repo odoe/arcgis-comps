@@ -1,1 +1,0 @@
-import{e,d as r,i as s,a1 as t}from"./p-e58503d5.js";var o;let i=o=class extends t{constructor(){super(...arguments),this.url=""}destroy(){this.url=""}clone(){return new o({url:this.url})}};e([r({type:String,json:{write:{isRequired:!0}}})],i.prototype,"url",void 0),i=o=e([s("esri.webdoc.support.Thumbnail")],i);const n=i;export{n as c}

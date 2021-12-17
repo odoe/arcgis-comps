@@ -1,1 +1,0 @@
-import{H as n,m as t}from"./p-01e5a461.js";function r(r,o){const u=o||r.extent,c=r.width,e=n(u&&u.spatialReference);return u&&c?u.width/c*e*t*96:0}function o(r,o){return r/(n(o)*t*96)}function u(n,t){const r=n.extent,u=n.width,c=o(t,r.spatialReference);return r.clone().expand(c*u/r.width)}export{u as c,o as i,r}

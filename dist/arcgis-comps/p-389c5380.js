@@ -1,1 +1,0 @@
-import{i as o}from"./p-5f8e8f6c.js";function f(f){f&&f.writtenProperties&&f.writtenProperties.forEach((f=>{const t=f.target;f.newOrigin&&f.oldOrigin!==f.newOrigin&&o(t)&&t.updateOrigin(f.propName,f.newOrigin)}))}export{f as r}

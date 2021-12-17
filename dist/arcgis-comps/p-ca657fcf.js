@@ -1,1 +1,0 @@
-import{af as n}from"./p-e58503d5.js";function t(n){return n&&"function"==typeof n.highlight}function e(n){return n&&"function"==typeof n.maskOccludee}function o(t,e,o){return n(t)||t>o&&(0===e||t<e)}function r(n){let{minScale:t,maxScale:e}=n;return t=t||0,e=e||0,{minScale:t,maxScale:e}}export{o as c,t as e,r as o,e as t}
